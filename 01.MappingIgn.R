@@ -8,13 +8,13 @@
 # Load relevant libraries
 library(rgbif)
 library(rnaturalearth)
-library(BIRDS) #Este paquete ya no está en CRAN, hay que descargarse la última version
-##Hay que instalar las dependencias ‘dbscan’, ‘geosphere’, ‘mapedit’, ‘rgeos’, ‘shotGroups’, ‘taxize’
-##install.packages(c('dbscan','geosphere','mapedit','rgeos','shotGroups','taxize'))
+library(BIRDS) # Not in CRAN, look for last version
+## Need to install packages dependences ‘dbscan’, ‘geosphere’, ‘mapedit’, ‘rgeos’, ‘shotGroups’, ‘taxize’
+## install.packages(c('dbscan','geosphere','mapedit','rgeos','shotGroups','taxize'))
 library(sf)
 
 # Check how many georeferrenced bird records in Angola
-#occ_count: es del paquete rgbif y te devuelve el numero de registros de ocurrencia
+# occ_count: from rgbif package. Return ocurrence records number
 occ_count(taxonKey = 734,
           country = isocodes[grep("Angola", isocodes$name), "code"],
           georeferenced = T)
@@ -27,13 +27,13 @@ bats_angola <- occ_search(taxonKey = 734,
                           limit = 100000) 
 
 # Get country limits polygon
-#Hay que instalar "rnaturalearthdata"
+# Need to install "rnaturalearthdata"
 angola_poly <- ne_countries(scale = 'medium',
                             country = 'Angola',
                             returnclass = 'sf')
-#angola_poly tiene que ser un sf
-#ne_countries devuelve los poligonos de paises a una escala determinada
-#Lo hacemos para Namibia
+# angola_poly must be a sf object
+# ne_countries returns country polygons in a selected scale
+# Namibia case
 namibia_poly <- ne_countries(scale = 'medium',
                             country = 'Namibia',
                             returnclass = 'sf')
@@ -90,7 +90,7 @@ makeGrid3 <- function (poly, gridSize, hexGrid = TRUE, offset = NULL, buffer = F
   return(grid)
 }
 
-#angola_grid es un sfc_POLYGON que es una colección de geometrias. Single_Feature_Collection
+# angola_grid is a sfc_POLYGON object, a geometries collection. Single_Feature_Collection
 angola_grid <- makeGrid3(poly = angola_poly,
                         hexGrid = F,
                         crs.trans = "+proj=eck4",
@@ -98,7 +98,7 @@ angola_grid <- makeGrid3(poly = angola_poly,
                         gridSize = 100)
 str(angola_grid)
 
-#para Namibia
+# Namibia
 namibia_grid <- makeGrid3(poly = namibia_poly,
                          hexGrid = F,
                          crs.trans = "+proj=eck4",

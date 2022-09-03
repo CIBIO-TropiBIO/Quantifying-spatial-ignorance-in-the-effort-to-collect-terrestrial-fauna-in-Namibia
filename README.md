@@ -7,4 +7,5 @@ discover the factors driving the availability of recent species occurrence recor
 Biodiversity Information Facility (GBIF) for multiple taxa at a spatial scale of 10 × 10 km.
 Modelling the relationship between ignorance scores and a set of socio-geographical variables
 with generalized additive models for location, scale and shape (GAMLSS).
+
 Supervisor: Richard Ladle (CIBIO) & Co-supervisor: Fernanda Alves Martins. PPGDIBICT Doctoral Programme. Federal University of Alagoas, Brazil.

@@ -3,7 +3,7 @@
 # Contact:  javimartinezarribas@gmail.com #
 ###########################################
 
-###Libraries (maybe you have to add or delete some package from the list)
+###Libraries (maybe you have to add or delete some packages from the list)
 load.libraries <- c('gamlss','tidyverse','ggpubr','skimr','readxl','fitdistrplus','zoib')
 install.lib <- load.libraries[!load.libraries %in% installed.packages()]
 for(libs in install.lib) install.packages(libs, dependences = TRUE)
@@ -34,7 +34,7 @@ g1_ang <- gamlss(df_final$IGNORANCE~1, family=BEINF1)
 g1_ang # You can see the parameter values estimated
 BEINF1() # You can see what parameters this distribution have in order to simulate it
 
-# Simulation for Great Escarpments observations distribution
+# Simulation for Great Escarpments observations distribution to check the distribution
 # For all Angola and Namibia Territory you will have to change them.
 simulation <- rBEINF1(
   n  = 2778,
@@ -75,15 +75,15 @@ summary(model_gamlss_ang_aves10)
 # If you got an advertency here, please increase ylim.all argument
 wp(model_gamlss_ang_aves10, ylim.all = 1.2)
 
-###Predictors selector
+## Predictors selector
 # Features in the table in which AIC is lower means that the model without that 
 # variable get better
 drop1(model_gamlss_ang_aves10, parameter = "mu", parallel = "multicore", ncpus = 2)
 drop1(model_gamlss_ang_aves10, parameter = "nu", parallel = "multicore", ncpus = 2)
 
 
-###Final Model
-# Here your features will be other ones. 
+## Final Model
+# Here your features will be another ones 
 # Depending on drop1 results you will need to change the formula
 model_gamlss_ang_aves10_final <- gamlss(
   formula = IGNORANCE ~ pb(UD) + pb(PAD) + pb(FC),
@@ -123,7 +123,7 @@ g2_ang <- gamlss(df_final$IGNORANCE~1, family=BEINF1)
 g2_ang
 BEINF1()
 
-# Simulation for Great Escarpments observations distribution
+# Simulation for Great Escarpments observations distribution to check the distribution
 # For all Angola and Namibia Territory you will have to change them.
 simulation <- rBEINF1(
   n  = 2775,
@@ -213,7 +213,7 @@ g3_ang <- gamlss(df_final$IGNORANCE~1, family=BEINF1)
 g3_ang
 BEINF1()
 
-# Simulation for Great Escarpments observations distribution
+# Simulation for Great Escarpments observations distribution to check the distribution
 # For all Angola and Namibia Territory you will have to change them.
 simulation <- rBEINF1(
   n  = 2775,
@@ -308,7 +308,7 @@ g1_nam <- gamlss(df_final$IGNORANCE~1, family=BEINF1)
 g1_nam # You can see the parameter values estimated
 BEINF1() # You can see what parameters needs this distribution
 
-# Simulation for Great Escarpments observations distribution
+# Simulation for Great Escarpments observations distribution to check the distribution
 # For all Angola and Namibia Territory you will have to change them.
 simulation <- rBEINF1(
   n  = 2778,
@@ -394,7 +394,7 @@ g2_nam <- gamlss(df_final$IGNORANCE~1, family=BEINF1)
 g2_nam
 BEINF1()
 
-# Simulation for Great Escarpments observations distribution
+# Simulation for Great Escarpments observations distribution to check the distribution
 # For all Angola and Namibia Territory you will have to change them.
 simulation <- rBEINF1(
   n  = 2775,
@@ -485,7 +485,7 @@ g3_nam <- gamlss(df_final$IGNORANCE~1, family=BEINF1)
 g3_nam
 BEINF1()
 
-#Simulation
+# Simulation for Great Escarpments observations distribution to check the distribution
 simulation <- rBEINF1(
   n  = 2775,
   mu = exp(0.9491)/(1+exp(0.9491)),

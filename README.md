@@ -8,4 +8,4 @@ Biodiversity Information Facility (GBIF) for multiple taxa at a spatial scale of
 Modelling the relationship between ignorance scores and a set of socio-geographical variables
 with generalized additive models for location, scale and shape (GAMLSS).
 
-Supervisor: Richard Ladle (CIBIO) & Co-supervisor: Fernanda Alves Martins. PPGDIBICT Doctoral Programme. Federal University of Alagoas, Brazil.
+Supervisor: Richard Ladle (CIBIO - UFAL) & Co-supervisor: Fernanda Alves Martins. PPGDIBICT Doctoral Programme. Federal University of Alagoas, Brazil.

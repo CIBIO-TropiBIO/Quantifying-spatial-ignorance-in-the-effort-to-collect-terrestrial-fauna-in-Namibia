@@ -1,4 +1,4 @@
-# Knowledge and Ignorance of Namibia&#39;s biodiversity
+# Quantifying spatial ignorance in the effort to collect terrestrial fauna in Namibia
 ### Corresponding author: Thainá Lessa
 ### Email: thainalessaps@gmail.com
 
